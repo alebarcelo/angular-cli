@@ -1,0 +1,103 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  background-color: #f1f1f1;
+}
+
+.alert.mdi::before,
+.breadcrumb .mdi::before,
+.btn.mdi::before,
+.card-title.mdi::before,
+.card-subtitle.mdi::before,
+.card-link.mdi::before,
+.dropdown-item.mdi::before,
+.list-group-item.mdi::before,
+.nav-link.mdi::before {
+  font-size: 1.25em;
+  line-height: initial;
+  position: relative;
+  top: 0.09rem;
+}
+.alert.mdi::before,
+.breadcrumb .mdi:not(:empty)::before,
+.btn.mdi:not(:empty)::before,
+.card-title.mdi:not(:empty)::before,
+.card-subtitle.mdi:not(:empty)::before,
+.card-link.mdi:not(:empty)::before,
+.dropdown-item.mdi:not(:empty)::before,
+.nav-link.mdi:not(:empty)::before {
+  margin-right: 0.25rem;
+}
+.list-group-item.mdi:not(:empty)::before {
+  margin-right: 0.5rem;
+}
+.dropdown-item.mdi:not(:empty)::before {
+  margin-left: -0.75rem;
+}
+.alert.mdi::before,
+.list-group-item.mdi:not(:empty)::before {
+  margin-left: -0.5rem;
+}
+.modal-title.mdi::before {
+  font-size: 1.5em;
+  line-height: 0.5;
+  position: relative;
+  top: 0.26rem;
+  margin-right: 0.5rem;
+}
+
+.content {
+  position: absolute;
+  background-color: #f1f1f1;
+  margin-left: 230px;
+  top: 56px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transition: margin-left 0.2s ease-out;
+  -moz-transition: margin-left 0.2s ease-out;
+  transition: margin-left 0.2s ease-out;
+}
+
+accordion {
+  &.panel-group {
+    .panel {
+      .panel-default {
+        background-color: transparent;
+        margin-top: 0;
+        border: none;
+        border-radius: 0;
+        .panel-heading {
+          border: none;
+          background-color: transparent;
+          padding: 0;
+          .btn {
+            text-align: left;
+            padding: 15px;
+            display: block;
+            text-decoration: none;
+            font-size: 14px;
+            color: #dce2e4;
+            line-height: 1.1;
+            &:hover {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.container-section {
+  max-width: 1170px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  &.container-section-md {
+    max-width: 970px;
+  }
+}
