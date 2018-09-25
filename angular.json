@@ -28,10 +28,11 @@
             ],
             "styles": [
               "node_modules/@mdi/font/css/materialdesignicons.css",
+              "node_modules/bootstrap/scss/bootstrap.scss",
               "src/scss/main.scss"
             ],
             "scripts": [
-              "./node_modules/jquery/jquery.min.js"
+              "node_modules/jquery/dist/jquery.min.js"
             ]
           },
           "configurations": {

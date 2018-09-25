@@ -2,7 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { BsDropdownModule, AccordionModule } from 'ngx-bootstrap';
+import { BsDropdownModule, AccordionModule, TooltipModule, ModalModule } from 'ngx-bootstrap';
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
@@ -13,13 +13,14 @@ import { routing } from './app.routing';
 import { AlertComponent } from './_directives';
 import { AuthGuard } from './_guards';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
-import { AlertService, AuthenticationService, UserService } from './_services';
+import { AlertService, AuthenticationService, UserService, ViewService, IntegrationService } from './_services';
 import { DashboardComponent } from './dashboard';
-import { LoginComponent } from './login';
+import { LoginComponent, LoginModalComponent } from './login';
 import { RegisterComponent } from './register';
 import { MenuTopComponent } from './common/menu-top';
-import { MenuLeftComponent } from './common/menu-left/menu-left.component';;
-import { ViewsComponent } from './views/views.component'
+import { MenuLeftComponent } from './common/menu-left/menu-left.component';
+import { ViewsComponent} from "./views";
+
 
 @NgModule({
     imports: [
@@ -28,23 +29,29 @@ import { ViewsComponent } from './views/views.component'
         HttpClientModule,
         routing,
         BsDropdownModule.forRoot(),
-        AccordionModule.forRoot()
+        AccordionModule.forRoot(),
+        TooltipModule.forRoot(),
+        ModalModule.forRoot()
     ],
     declarations: [
         AppComponent,
+        LoginModalComponent,
         AlertComponent,
         DashboardComponent,
         LoginComponent,
         RegisterComponent,
         MenuTopComponent,
-        MenuLeftComponent
-,
-        ViewsComponent    ],
+        MenuLeftComponent,
+        ViewsComponent
+    ],
+    entryComponents: [LoginModalComponent],
     providers: [
         AuthGuard,
         AlertService,
         AuthenticationService,
         UserService,
+        ViewService,
+        IntegrationService,
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 

@@ -1,17 +1,12 @@
 .menu-left {
   position: fixed;
-  width: 230px;
+  width: 50px;
   top: 0;
   left: 0;
   bottom: 0;
+  overflow: hidden;
   padding-top: 56px;
-  -webkit-transform: translateX(0%);
-  -moz-transform: translateX(0%);
-  -ms-transform: translateX(0%);
-  transform: translateX(0%);
-  -webkit-transition: transform 0.2s ease-out;
-  -moz-transition: transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
+  transition: width 0.2s ease-out;
   .menu-left-container {
     background-color: #222d32;
     height: 100%;

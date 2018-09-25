@@ -1,5 +1,7 @@
-﻿<app-menu-top></app-menu-top>
-<app-menu-left></app-menu-left>
-<div class="content">
-    <router-outlet></router-outlet>
+﻿<div class="wrapper" [class.open-menu-left]="openMenu">
+    <app-menu-top [(openMenu)]="openMenu"></app-menu-top>
+    <app-menu-left [(openMenu)]="openMenu"></app-menu-left>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
 </div>
