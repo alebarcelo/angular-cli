@@ -7,26 +7,27 @@ import { BsDropdownModule, AccordionModule, TooltipModule, ModalModule } from 'n
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
 
+import { ViewsModule } from './views/views.module';
+
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 
 import { AlertComponent } from './_directives';
 import { AuthGuard } from './_guards';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
-import { AlertService, AuthenticationService, UserService, ViewService, IntegrationService } from './_services';
+import { AlertService, AuthenticationService, UserService, IntegrationService } from './_services';
 import { DashboardComponent } from './dashboard';
 import { LoginComponent, LoginModalComponent } from './login';
 import { RegisterComponent } from './register';
 import { MenuTopComponent } from './common/menu-top';
 import { MenuLeftComponent } from './common/menu-left/menu-left.component';
-import { ViewsComponent} from "./views";
-
 
 @NgModule({
     imports: [
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
+        ViewsModule,
         routing,
         BsDropdownModule.forRoot(),
         AccordionModule.forRoot(),
@@ -41,16 +42,13 @@ import { ViewsComponent} from "./views";
         LoginComponent,
         RegisterComponent,
         MenuTopComponent,
-        MenuLeftComponent,
-        ViewsComponent
-    ],
+        MenuLeftComponent],
     entryComponents: [LoginModalComponent],
     providers: [
         AuthGuard,
         AlertService,
         AuthenticationService,
         UserService,
-        ViewService,
         IntegrationService,
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

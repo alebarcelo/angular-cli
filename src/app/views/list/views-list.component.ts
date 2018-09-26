@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { View } from "../_models";
-import { ViewService } from "../_services";
+import { View } from "../../_models";
+import { ViewService } from "../../_services";
 
 @Component({
-  selector: 'app-views',
-  templateUrl: './views.component.html',
-  styleUrls: ['./views.component.scss']
+  selector: 'app-views-list',
+  templateUrl: './views-list.component.html',
+  styleUrls: ['./views-list.component.scss']
 })
 
-export class ViewsComponent implements OnInit {
+export class ViewsListComponent implements OnInit {
 
     recordset = {
         items       : [],
